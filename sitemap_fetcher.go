@@ -129,7 +129,7 @@ func (f *SitemapFetcher) Walk(ctx context.Context, website *url.URL, yield func(
 				return err
 			}
 			if !allowed {
-				f.logger.Info(fmt.Sprintf("robots.txt disallows sitemap %s", current.loc))
+				f.logger.Debug(fmt.Sprintf("robots.txt disallows sitemap %s", current.loc))
 				continue
 			}
 		}
@@ -150,7 +150,7 @@ func (f *SitemapFetcher) Walk(ctx context.Context, website *url.URL, yield func(
 		err = parseSitemap(ctx, reader, func(entry xmlURLEntry) error {
 			loc, err := resolveLocation(current.loc, entry.Loc)
 			if err != nil {
-				f.logger.Info(fmt.Sprintf("invalid URL %q in %s: %v", entry.Loc, current.loc, err))
+				f.logger.Debug(fmt.Sprintf("invalid URL %q in %s: %v", entry.Loc, current.loc, err))
 				return nil
 			}
 			if !f.opts.IgnoreRobots {
@@ -159,7 +159,7 @@ func (f *SitemapFetcher) Walk(ctx context.Context, website *url.URL, yield func(
 					return err
 				}
 				if !allowed {
-					f.logger.Info(fmt.Sprintf("robots.txt disallows URL %s", loc))
+					f.logger.Debug(fmt.Sprintf("robots.txt disallows URL %s", loc))
 					return nil
 				}
 			}
@@ -184,7 +184,7 @@ func (f *SitemapFetcher) Walk(ctx context.Context, website *url.URL, yield func(
 		}, func(entry xmlSitemapEntry) error {
 			loc, err := resolveLocation(current.loc, entry.Loc)
 			if err != nil {
-				f.logger.Info(fmt.Sprintf("invalid sitemap URL %q in %s: %v", entry.Loc, current.loc, err))
+				f.logger.Debug(fmt.Sprintf("invalid sitemap URL %q in %s: %v", entry.Loc, current.loc, err))
 				return nil
 			}
 			queue = append(queue, sitemapTask{loc: loc, depth: current.depth + 1})
@@ -497,7 +497,7 @@ func (f *SitemapFetcher) getRobots(ctx context.Context, base *url.URL, cache map
 	for _, loc := range data.Sitemaps {
 		parsed, err := url.Parse(strings.TrimSpace(loc))
 		if err != nil {
-			f.logger.Info(fmt.Sprintf("invalid sitemap URL %q in robots.txt %s: %v", loc, robotsURL, err))
+			f.logger.Debug(fmt.Sprintf("invalid sitemap URL %q in robots.txt %s: %v", loc, robotsURL, err))
 			continue
 		}
 		if !parsed.IsAbs() {

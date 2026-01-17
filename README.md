@@ -181,4 +181,4 @@ Flags:
 
 Environment:
 
-- `GO_SITEMAP_FETCHER_LOG_LEVEL` sets the default log level (same values as `--log-level`, default `error`).
+- `GO_SITEMAP_FETCHER_LOG_LEVEL` sets the log level (same values as `--log-level`, default `error`, set to `debug` to see discarded by robots.txt urls, sitemaps, etc).
