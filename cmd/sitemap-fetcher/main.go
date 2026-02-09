@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	gositemapfetcher "github.com/kotylevskiy/go-sitemap-fetcher"
+	gositemapfetcher "github.com/enot-style/go-sitemap-fetcher"
 	"github.com/spf13/cobra"
 )
 

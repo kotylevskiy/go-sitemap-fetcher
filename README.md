@@ -1,7 +1,7 @@
 # go-sitemap-fetcher
-[![Go Reference](https://pkg.go.dev/badge/github.com/kotylevskiy/go-sitemap-fetcher.svg)](https://pkg.go.dev/github.com/kotylevskiy/go-sitemap-fetcher)
-[![Go Report Card](https://goreportcard.com/badge/github.com/kotylevskiy/go-sitemap-fetcher)](https://goreportcard.com/report/github.com/kotylevskiy/go-sitemap-fetcher)
-[![License](https://img.shields.io/github/license/kotylevskiy/go-sitemap-fetcher)](LICENSE)
+[![Go Reference](https://pkg.go.dev/badge/github.com/enot-style/go-sitemap-fetcher.svg)](https://pkg.go.dev/github.com/enot-style/go-sitemap-fetcher)
+[![Go Report Card](https://goreportcard.com/badge/github.com/enot-style/go-sitemap-fetcher)](https://goreportcard.com/report/github.com/enot-style/go-sitemap-fetcher)
+[![License](https://img.shields.io/github/license/enot-style/go-sitemap-fetcher)](LICENSE)
 
 
 Fast, streaming sitemap walker for Go. It handles sitemap indexes (including nested indexes), gzip-compressed XML, robots.txt rules, and URL filtering **without loading entire sitemaps into memory**, even when they are gzipped.
@@ -25,7 +25,7 @@ Other parsers are great for specific tasks, but many focus on parsing a single s
 ## Install
 
 ```bash
-go get github.com/kotylevskiy/go-sitemap-fetcher
+go get github.com/enot-style/go-sitemap-fetcher
 ```
 
 ## Quickstart
@@ -39,7 +39,7 @@ import (
 	"log"
 	"net/url"
 
-	gositemapfetcher "github.com/kotylevskiy/go-sitemap-fetcher"
+	gositemapfetcher "github.com/enot-style/go-sitemap-fetcher"
 )
 
 func main() {
@@ -167,7 +167,7 @@ This shows memory usage staying flat while processing 10M URLs, which indicates 
 Fetch a sitemap and print URLs line by line:
 
 ```bash
-go run ./cmd/go-sitemap-fetcher https://www.apple.com/sitemap.xml
+go run ./cmd/sitemap-fetcher https://www.apple.com/sitemap.xml
 ```
 
 Flags:

@@ -15,7 +15,7 @@ import (
 	mega "github.com/MegaBytee/sitemap-go"
 	"github.com/MegaBytee/sitemap-go/config"
 	aafeher "github.com/aafeher/go-sitemap-parser"
-	gositemapfetcher "github.com/kotylevskiy/go-sitemap-fetcher"
+	gositemapfetcher "github.com/enot-style/go-sitemap-fetcher"
 	gopher "github.com/mrehanabbasi/gopher-parse-sitemap"
 )
 
